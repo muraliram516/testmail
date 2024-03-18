@@ -9,6 +9,9 @@ const port = 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/mail', (req, res) => {
+    res.status(200).send('Email sent: ');
+});
 
 app.post('/send-mail', (req, res) => {
   const { to, subject, text } = req.body;
